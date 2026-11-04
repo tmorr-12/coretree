@@ -1,0 +1,17 @@
+%%metro title: coretree
+%%metro style: dark
+%%metro line: main | Phylogeny | #2db572
+%%metro file: gff3_in | GFF3
+%%metro file: tree_out | .treefile
+
+graph LR
+    subgraph workflow [Workflow]
+        panaroo([Panaroo])
+        snp_sites([snp-sites])
+        iqtree([IQ-Tree])
+
+		gff3_in -->|main| panaroo
+        panaroo -->|main| snp_sites
+        snp_sites -->|main| iqtree
+        iqtree -->|main| tree_out
+    end

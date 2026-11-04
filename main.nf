@@ -24,4 +24,14 @@ Usage:
 
     IQTREE(core_snps_ch)
 
+    channel.topic('versions')
+        .unique()
+        .map { tool, version -> "${tool}\t${version}" }
+        .collectFile(
+            storeDir: "${params.outdir}/pipeline-info",
+            name: 'software_versions.tsv',
+            newLine: true,
+            sort: true
+        )
+
 }
