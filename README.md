@@ -1,2 +1,2 @@
 # coretree
-Simply core genome phylogeny workflow written in Nextflow
+Simple prokaryotic core genome phylogeny workflow written in Nextflow
